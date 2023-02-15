@@ -29,6 +29,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "14"  
-      - name: Install Dependencies
-        if: steps.npm_cache_id.outputs.cache-hit != 'true'
-        run: npm ci 
+      - name: Build, Test & Deploy
+        uses: gfarb/sfdx-deploy@v1
+        env:
+          TARGET_USERNAME: prashantd79795@gmail.com
+          SOURCE_PATH: force-app
+          DESTRUCTIVE_CHANGES: destructive-changes
+          TEST_LEVEL: RunLocalTests
+          WAIT: 200
