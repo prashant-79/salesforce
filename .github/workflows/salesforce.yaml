@@ -25,6 +25,3 @@ jobs:
         run: |
             sudo apt-get update
             sudo apt install default-jdk
-      - name: 'Update sfdx-project.json and README'
-        id: packaging-updater
-        uses: muenzpraeger/github-action-sfdx-packaging-updater@master 
