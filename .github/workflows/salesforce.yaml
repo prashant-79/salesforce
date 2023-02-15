@@ -25,5 +25,6 @@ jobs:
         run: |
             sudo apt-get update
             sudo apt install default-jdk
-      - name: 'Installing SFDX scanner'
-        run: sfdx plugins:install @salesforce/sfdx-scanner            
+      - name: 'Update sfdx-project.json and README'
+        id: packaging-updater
+        uses: muenzpraeger/github-action-sfdx-packaging-updater@master            
