@@ -27,4 +27,8 @@ jobs:
             sudo apt install default-jdk
       - name: 'Update sfdx-project.json and README'
         id: packaging-updater
-        uses: muenzpraeger/github-action-sfdx-packaging-updater@master            
+        uses: muenzpraeger/github-action-sfdx-packaging-updater@master 
+      - name: 'Create scratch org'
+        uses: forcedotcom/salesforcedx-actions@master
+        with:
+          args: 'force:org:create -f config/project-scratch-def.json -a scratch-org -s -d 1'
