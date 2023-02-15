@@ -23,6 +23,5 @@ jobs:
           fetch-depth: 0    
       - name: 'Installing sfdx git delta'
         run: | 
-           echo y | sfdx plugins:install sfdx-git-delta
-           sfdx plugins     
+           echo y | sfdx plugins:install sfdx-git-delta     
       
