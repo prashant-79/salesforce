@@ -28,4 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "14"            
+          node-version: "14"  
+      - name: Install Dependencies
+        if: steps.npm_cache_id.outputs.cache-hit != 'true'
+        run: npm ci 
