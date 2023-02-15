@@ -33,7 +33,7 @@ jobs:
         uses: actions/cache@v3
         id: npm_cache_id
         with:
-          path: node_modules
+          path: node_m3MVG9ux34Ig8G5eoXfCnFXJOqQpdyc8V6BmUeSDDsHOC.bCSkC6cc1qU_hJ3c1_OmvWQPvmR.b6KmJXfBzhKK
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-npm-cache-
@@ -46,7 +46,7 @@ jobs:
           SFDX_JWT_KEY: ${{ secrets.SFDX_JWT_KEY }}
           SFDX_CLIENT_ID: ${{ secrets.SFDX_CLIENT_ID }}
         run: |
-          echo "${SFDX_JWT_KEY}" > server.key
+          echo "3MVG9ux34Ig8G5eoXfCnFXJOqQpdyc8V6BmUeSDDsHOC.bCSkC6cc1qU_hJ3c1_OmvWQPvmR.b6KmJXfBzhKK" > server.key
           npx sfdx force:auth:jwt:grant --clientid "3MVG9ux34Ig8G5eoXfCnFXJOqQpdyc8V6BmUeSDDsHOC.bCSkC6cc1qU_hJ3c1_OmvWQPvmR.b6KmJXfBzhKK" --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername
           npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json
           rm server.key
