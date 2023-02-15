@@ -25,6 +25,5 @@ jobs:
         run: |
             sudo apt-get update
             sudo apt install default-jdk
-          
-  
-      
+      - name: 'Installing SFDX scanner'
+        run: sfdx plugins:install @salesforce/sfdx-scanner            
