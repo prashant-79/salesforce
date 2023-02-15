@@ -29,11 +29,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "14"  
-      - name: Build, Test & Deploy
-        uses: gfarb/sfdx-deploy@v1
-        env:
-          TARGET_USERNAME: prashantd79795@gmail.com
-          SOURCE_PATH: force-app
-          DESTRUCTIVE_CHANGES: destructive-changes
-          TEST_LEVEL: RunLocalTests
-          WAIT: 200
+      - name: Cache node modules
+        uses: actions/cache@v3
+        id: npm_cache_id
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-cache-
+            ${{ runner.os }}-
