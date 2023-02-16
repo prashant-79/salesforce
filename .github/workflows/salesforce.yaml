@@ -41,8 +41,6 @@ jobs:
       - name: Install Dependencies
         if: steps.npm_cache_id.outputs.cache-hit != 'true'
         run: npm install
-      - name: "Populate auth file with DEVHUB_SFDX_URL secret"
-        shell: bash
-        run: echo ${{ secrets.DEVHUB_SFDX_URL}} > ./DEVHUB_SFDX_URL.txt
-      - name: "Authenticate Dev Hub"
-        run: sfdx auth:sfdxurl:store -f ./DEVHUB_SFDX_URL.txt -a devhub -d  
+
+      - name: Install Salesforce CLI Auth Plugin
+        run: sfdx plugins:install @salesforce/plugin-auth
