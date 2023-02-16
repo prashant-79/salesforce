@@ -28,7 +28,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "12.18.3"  
+          node-version: "14"  
       - name: Cache node modules
         uses: actions/cache@v3
         id: npm_cache_id
@@ -42,5 +42,3 @@ jobs:
         if: steps.npm_cache_id.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: Install Salesforce CLI Auth Plugin
-        run: sfdx plugins:install @salesforce/plugin-auth
