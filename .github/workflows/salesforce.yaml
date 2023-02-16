@@ -45,8 +45,12 @@ jobs:
         env:
           SFDX_JWT_KEY: ${{ secrets.SFDX_JWT_KEY }}
           SFDX_CLIENT_ID: ${{ secrets.SFDX_CLIENT_ID }}
+      - name: SFDX Auth
+        env:
+          SFDX_JWT_KEY: ${{ secrets.SFDX_JWT_KEY }}
+          SFDX_CLIENT_ID: ${{ secrets.SFDX_CLIENT_ID }}
         run: |
-          echo "3MVG9ux34Ig8G5eoXfCnFXJOqQpdyc8V6BmUeSDDsHOC.bCSkC6cc1qU_hJ3c1_OmvWQPvmR.b6KmJXfBzhKK" > server.key
-          npx sfdx force:auth:jwt:grant --clientid "3MVG9ux34Ig8G5eoXfCnFXJOqQpdyc8V6BmUeSDDsHOC.bCSkC6cc1qU_hJ3c1_OmvWQPvmR.b6KmJXfBzhKK" --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername
+          echo "${SFDX_JWT_KEY}" > server.key
+          npx sfdx force:auth:jwt:grant --clientid "${SFDX_CLIENT_ID}" --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername
           npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json
           rm server.key
