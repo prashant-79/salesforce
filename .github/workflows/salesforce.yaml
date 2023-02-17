@@ -1,11 +1,11 @@
-name: 'sfdx1'
+name: 'sfdx'
 
 on: [push]
 
 jobs:
   Deploy:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: actions/checkout@v2              
