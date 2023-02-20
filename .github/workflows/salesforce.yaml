@@ -41,13 +41,12 @@ jobs:
       - name: Install Dependencies
         if: steps.npm_cache_id.outputs.cache-hit != 'true'
         run: npm install
-      - name: SFDX Auth
-        env:
-          SFDX_JWT_KEY: ${{ secrets.SFDX_JWT_KEY }}
-          SFDX_CLIENT_ID: ${{ secrets.SFDX_CLIENT_ID }}
+      - name: Authentication to PROD
         run: |
-          echo "${SFDX_JWT_KEY}" > server.key
-          npx sfdx force:auth:jwt:grant --clientid 3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername https://login.salesforce.com
+          echo "${SERVER_KEY_PASSWORD}" > server.key
+          node_modules/sfdx-cli/bin/run auth:jwt:grant --clientid ${{ secrets.3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe }} --jwtkeyfile server.key --username ${{ secrets.prashantd79795@gmail.com }} --setdefaultdevhubusername --setalias prod
+        env:
+         SERVER_KEY_PASSWORD: ${{ secrets.12345 }}
  
        
           
