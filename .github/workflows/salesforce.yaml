@@ -48,7 +48,6 @@ jobs:
         run: |
           echo "${SFDX_JWT_KEY}" > server.key
           npx sfdx force:auth:jwt:grant --clientid "3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe" --jwtkeyfile server.key --username prashantd79795@gmail.com --instanceurl https://http://login.salesforce.com
-          npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json --setdefaultdevhubusername
-          rm server.key       
+       
           
 
