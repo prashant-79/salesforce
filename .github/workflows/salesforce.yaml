@@ -48,8 +48,8 @@ jobs:
           SFDX_CLIENT_ID: ${{ secrets.SFDX_CLIENT_ID }}
         run: |
           echo "${SFDX_JWT_KEY}" > server.key
-          npx sfdx force:auth:jwt:grant --clientid 3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile/server.key --username prashantd79795@gmail.com --setdefaultdevhubusername https://login.salesforce.com
-          npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json --setdefaultdevhubusername
+          npx sfdx force:auth:jwt:grant --clientid 3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername https://login.salesforce.com
+          npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json --setdefaultdevhubusername --instanceurl releaseowl2-dev-ed.develop.lightning.force.com/lightning/setup/SetupOneHome/home
           rm server.key
  
        
