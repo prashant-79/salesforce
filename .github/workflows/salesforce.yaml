@@ -57,5 +57,5 @@ jobs:
           TEST_LEVEL: RunLocalTests
           WAIT: 200
         run: |
-          sfdx force:source:deploy -p recriutment.xml -u prashantd79795@gmail.com
+          sfdx force:source:deploy --manifest=manifest/recriutment.xml --testlevel=RunLocalTests -u prashantd79795@gmail.com
 
