@@ -47,7 +47,7 @@ jobs:
           SFDX_JWT_KEY: ${{ secrets.SFDX_JWT_KEY }}
           SFDX_CLIENT_ID: ${{ secrets.SFDX_CLIENT_ID }}
         run: |
-           sfdx force:auth:jwt:grant --clientid=3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile="C:\sf vscode\sfvscode\JWT\server.key"  --username=prashantd79795@gmail.com --setdefaultdevhubusername
+           sfdx force:auth:jwt:grant --clientid=3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile="C:\home\runner\work\salesforce\salesforce\server.key"  --username=prashantd79795@gmail.com --setdefaultdevhubusername
        
           
 
