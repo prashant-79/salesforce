@@ -49,7 +49,7 @@ jobs:
         run: |
           echo "${SFDX_JWT_KEY}" > server.key
           npx sfdx auth:jwt:grant --clientid  3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername 
-          npx sfdx force:org:display --json -u gfarb@github.dreamforce > sfdx-auth.json
+          npx sfdx force:org:display --json -u prashantdhote79795@gmail.com > sfdx-auth.json
           rm server.key
       - name: Build, Test & Deploy
         uses: gfarb/sfdx-deploy@v1
