@@ -49,12 +49,13 @@ jobs:
         run: |
           echo "${SFDX_JWT_KEY}" > server.key
           npx sfdx auth:jwt:grant --clientid  3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername
-      - name: Build, Test & Deploy
-        uses: salesforce/sfdx-deploy@v1      
+      - name: Build, Test & Deploy     
         env:
           TARGET_USERNAME: prashantd79795@gmail.com
           SOURCE_PATH: force-app
           DESTRUCTIVE_CHANGES: destructive-changes
           TEST_LEVEL: RunLocalTests
           WAIT: 200
+        run: |
+          sfdx force:source:deploy -p salesforce/force-app/main/default/applications/recriutment.xml
 
