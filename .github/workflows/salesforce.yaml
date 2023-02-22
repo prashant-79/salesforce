@@ -48,6 +48,6 @@ jobs:
           SFDX_CLIENT_ID: ${{ secrets.SFDX_CLIENT_ID }}
         run: |
           echo "${SFDX_JWT_KEY}" > server.key
-          npx sfdx auth:jwt:grant --clientid  3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile C:\home\runner\work\salesforce\salesforce\server.key --username prashantd79795@gmail.com --instanceurl https://test.salesforce.com --json
+          npx sfdx auth:jwt:grant --clientid  3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile server.key --username prashantd79795@gmail.com --instanceurl https://test.salesforce.com --json
           
 
