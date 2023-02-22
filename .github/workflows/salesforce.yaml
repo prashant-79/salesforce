@@ -50,7 +50,7 @@ jobs:
           echo "${SFDX_JWT_KEY}" > server.key
           npx sfdx auth:jwt:grant --clientid  3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername
       - name: Build, Test & Deploy
-        uses: gfarb/sfdx-deploy@v1      
+        uses: prashantd79795/sfdx-deploy@v1      
         env:
           TARGET_USERNAME: prashantd79795@gmail.com
           SOURCE_PATH: force-app
