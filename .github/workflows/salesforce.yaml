@@ -53,4 +53,4 @@ jobs:
       - name: deployment
         run: |
            sfdx config:set defaultusername=prashantd79795@gmail.com
-           sfdx force:source:deploy -x  salesforce/force-app/main/default/classes/AccountController.cls-meta.xml  -u prashantd79795@gmail.com 
+           sfdx force:source:deploy -x  salesforce/force-app/main/default/package.xml  -u prashantd79795@gmail.com 
