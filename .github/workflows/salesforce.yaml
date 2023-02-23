@@ -51,4 +51,6 @@ jobs:
           npx sfdx auth:jwt:grant --clientid  3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername
           npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json
       - name: deployment
-        run: sfdx force:source:deploy -x salesforce/force-app/main/default/applications/recriutment.xml
+        run: |
+           sfdx config:set defaultusername=prashantd79795@gmail.com
+           sfdx force:source:deploy -x salesforce/force-app/main/default/applications/recriutment.xml -u prashantd79795@gmail.com
