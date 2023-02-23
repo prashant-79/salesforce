@@ -53,4 +53,4 @@ jobs:
       - name: deployment
         run: |
            sfdx config:set defaultusername=prashantd79795@gmail.com
-           sfdx force:source:deploy --manifest salesforce/force-app/main/default/package.xml
+           sfdx force:source:deploy -p salesforce/force-app/main/default/package.xml
