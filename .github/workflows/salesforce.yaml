@@ -53,4 +53,4 @@ jobs:
       - name: deployment
         run: |
            sfdx config:set defaultusername=prashantd79795@gmail.com
-           sfdx force:source:deploy -p package.xml -u prashantd79795@gmail.com
+           sfdx force:source:deploy --manifest package.xml --predestructivechanges destructiveChangesPre.xml
