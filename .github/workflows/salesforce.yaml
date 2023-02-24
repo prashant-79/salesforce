@@ -52,4 +52,5 @@ jobs:
           npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json
       - name: deployment
         run: |
-          sfdx force:source:deploy -p salesforce/force-app/main/default/applications/recriutment.xml -c -l RunLocalTests --loglevel error
+          sfdx config:set defaultusername=prashantd79795@gmail.com
+          sfdx force:source:deploy -p salesforce/force-app/main/default/applications/recriutment.xml -c -l RunLocalTests --loglevel error -u prashantdhote79795@gmail.com
