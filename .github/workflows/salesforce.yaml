@@ -1,4 +1,4 @@
-name: 'sfdx1'
+name: 'sfdx'
 
 on: [push]
 
@@ -39,6 +39,7 @@ jobs:
             ${{ runner.os }}-npm-cache-
             ${{ runner.os }}-
       - name: Install Dependencies
+        if: steps.npm_cache_id.outputs.cache-hit != 'true'
         run: npm install
        
       - name: SFDX Auth
@@ -52,4 +53,4 @@ jobs:
       - name: deployment
         run: |
            sfdx config:set defaultusername=prashantd79795@gmail.com
-           sfdx force:source:deploy -m  salesforce/force-app/main/default/applications/project.json  -u prashantd79795@gmail.com --ignorewarnings
+           sfdx force:source:deploy -x  force-app/main/default/package.xml  -u prashantd79795@gmail.com --ignorewarnings
