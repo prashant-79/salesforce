@@ -52,4 +52,4 @@ jobs:
       - name: deployment
         run: |
            sfdx config:set defaultusername=prashantd79795@gmail.com
-           sfdx force:source:deploy -x  salesforce/force-app/main/default/package.xml  -u prashantd79795@gmail.com --ignorewarnings -q 00DDn00000CXb38MAD
+           sfdx force:source:deploy -f  salesforce/force-app/main/default/applications/project.json  -u prashantd79795@gmail.com --ignorewarnings
