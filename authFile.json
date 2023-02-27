@@ -1,0 +1,11 @@
+{
+  "code": 1,
+  "message": "Parsing --target-org \n\tNo authorization information found for prashantdhote79795@gmail.com.\nSee more help with --help",
+  "name": "NamedOrgNotFoundError",
+  "status": 1,
+  "stack": "NamedOrgNotFoundError: Parsing --target-org \n\tNo authorization information found for prashantdhote79795@gmail.com.\nSee more help with --help\n    at Messages.createError (C:\\Program Files\\sfdx\\client\\node_modules\\@salesforce\\core\\lib\\messages.js:451:16)\n    at AuthInfo.init (C:\\Program Files\\sfdx\\client\\node_modules\\@salesforce\\core\\lib\\org\\authInfo.js:537:28)\n    at async AuthInfo.create (C:\\Program Files\\sfdx\\client\\node_modules\\@salesforce\\kit\\lib\\creatable.js:57:9)\n    at async Org.init (C:\\Program Files\\sfdx\\client\\node_modules\\@salesforce\\core\\lib\\org\\org.js:769:27)\n    at async Org.create (C:\\Program Files\\sfdx\\client\\node_modules\\@salesforce\\kit\\lib\\creatable.js:57:9)\n    at async maybeGetOrg (C:\\Program Files\\sfdx\\client\\node_modules\\@salesforce\\sf-plugins-core\\lib\\flags\\orgFlags.js:16:16)\n    at async getOrgOrThrow (C:\\Program Files\\sfdx\\client\\node_modules\\@salesforce\\sf-plugins-core\\lib\\flags\\orgFlags.js:51:17)\n    at async Parser._parseFlag (C:\\Program Files\\sfdx\\client\\node_modules\\@oclif\\core\\lib\\parser\\parse.js:242:33)\n    at async Parser._flags (C:\\Program Files\\sfdx\\client\\node_modules\\@oclif\\core\\lib\\parser\\parse.js:199:35)\n    at async Parser.parse (C:\\Program Files\\sfdx\\client\\node_modules\\@oclif\\core\\lib\\parser\\parse.js:161:23)",
+  "exitCode": 1,
+  "warnings": [
+    "The \"force org display\" command has been deprecated. Use \"org display\" instead."
+  ]
+}
