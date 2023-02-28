@@ -51,4 +51,4 @@ jobs:
           npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json
       - name: Deploy Apex Class
         run: |
-          sfdx force:source:deploy --sourcepath force-app/main/default/classes/AccountController.cls --json
+          sfdx force:source:deploy --sourcepath force-app/main/default/classes/AccountController.cls -u prashantd79795@gmail.com 
