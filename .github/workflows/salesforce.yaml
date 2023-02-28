@@ -49,7 +49,7 @@ jobs:
           echo "${SFDX_JWT_KEY}" > server.key
           npx sfdx auth:jwt:grant --clientid  3MVG9ux34Ig8G5eoXfCnFXJOqQgIuqaB3Kx4mdXAxbnWvSAUv4_Egucb.46hctMtWWiuiK3PkhLn8_CWCwIJe --jwtkeyfile server.key --username prashantd79795@gmail.com --setdefaultdevhubusername 
           npx sfdx force:org:display --json -u prashantd79795@gmail.com > sfdx-auth.json
-      - name: deployment
-        run: |
-           sfdx config:set defaultusername=prashantd79795@gmail.com
-           sfdx force:source:deploy -m ApexClass:salesforce/force-app/main/default/classes/AccountController.cls  -u prashantd79795@gmail.com 
+      - name: Deploy Apex Class
+        uses: salesforcecli/action-run-apex@v1
+        with:
+         apex: "sfdx force:source:deploy -p force-app/main/default/classes/AccountController.cls"
