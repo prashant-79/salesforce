@@ -52,4 +52,4 @@ jobs:
       - name: deployment
         run: |
            sfdx config:set defaultusername=prashantd79795@gmail.com
-           sfdx force:source:deploy -m ApexClass:AccountController.cls-meta.xml  -u prashantd79795@gmail.com --ignorewarnings
+           sfdx force:source:deploy -m ApexClass:AccountController.cls-meta.xml  -u prashantd79795@gmail.com 
